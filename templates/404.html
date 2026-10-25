@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% from "_macros.html" import entete %}
+{% block titre %}Page introuvable{% endblock %}
+{% block entete_page %}{{ entete("Page introuvable", "Erreur 404", "") }}{% endblock %}
+{% block contenu %}
+<section class="carte carte--liste">
+  <p>Cette équipe ou ce match n'existe pas.</p>
+  <a class="lien-fleche" href="{{ url_for('classement') }}">Retour au classement</a>
+</section>
+{% endblock %}

@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% from "_macros.html" import entete, forme, resultat_compact, prochain_compact %}
+
+{% block entete_page %}
+  {% call entete("Classement Régionale 2", site.division, site.zone) %}
+    <div class="resume__element"><strong>{{ etat.nb_equipes }}</strong> clubs</div>
+    {% if etat.journee_en_cours %}
+      <div class="resume__element"><strong class="accent">J{{ etat.journee_en_cours }}</strong> en cours</div>
+    {% endif %}
+    {% if etat.leader %}
+      <div class="resume__element"><span class="resume__libelle">Leader :</span> {{ etat.leader.nom }} ({{ etat.leader.points }} pts)</div>
+    {% endif %}
+  {% endcall %}
+{% endblock %}
+
+{% block contenu %}
+<div class="grille">
+  <div class="grille__principale">
+  <section class="carte">
+    <div class="carte__entete">
+      <h2 class="carte__titre">{{ site.poule }} <span class="carte__sous-titre">• {{ nb_journees }} journées</span></h2>
+      <div class="legende">
+        {% for zone, libelle in legende %}
+          <span><span class="point point--{{ zone }}"></span>{{ libelle }}</span>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="tableau-defilant">
+      <table class="classement">
+        <thead>
+          <tr>
+            <th scope="col" class="col-rang">#</th>
+            <th scope="col">Équipe</th>
+            <th scope="col" class="col-centre col-points">Pts</th>
+            <th scope="col" class="col-centre" title="Matchs joués">J</th>
+            <th scope="col" class="col-centre" title="Victoires">V</th>
+            <th scope="col" class="col-centre" title="Défaites">D</th>
+            <th scope="col" class="col-centre col-secondaire" title="Sets gagnés et perdus">Sets</th>
+            <th scope="col" class="col-centre col-secondaire" title="Coefficient de sets">Coeff</th>
+            <th scope="col" class="col-forme col-secondaire">Forme</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for c in classement %}
+          {% set l = c.ligne %}
+          <tr class="{% if c.zone %}zone--{{ c.zone }}{% endif %} {% if l.equipe_id == equipe_suivie %}ligne-suivie{% endif %}"
+              data-equipe="{{ l.equipe_id }}">
+            <td class="col-rang">{{ c.rang }}</td>
+            <td class="col-equipe">
+              <span class="equipe">
+                {% if c.zone %}<span class="point point--{{ c.zone }}"></span>{% endif %}
+                <a href="{{ url_for('equipe', equipe_id=l.equipe_id) }}">{{ l.nom }}</a>
+              </span>
+            </td>
+            <td class="col-centre col-points">{{ l.points }}</td>
+            <td class="col-centre attenue">{{ l.joues }}</td>
+            <td class="col-centre fort">{{ l.gagnes }}</td>
+            <td class="col-centre discret">{{ l.perdus }}</td>
+            <td class="col-centre attenue col-secondaire">{{ l.sets_pour }}:{{ l.sets_contre }}</td>
+            <td class="col-centre attenue col-secondaire">{{ l.coeff_sets | coeff }}</td>
+            <td class="col-forme col-secondaire">{{ forme(l.forme) }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <p class="carte__note">Victoire 3-0 ou 3-1 : 3 pts. Victoire 3-2 : 2 pts. Défaite 2-3 : 1 pt.
+      Égalité départagée par le nombre de victoires, puis le coefficient de sets, puis celui des points.</p>
+  </section>
+  </div>
+
+  <aside class="grille__laterale">
+    <section class="carte carte--liste">
+      <div class="carte__entete carte__entete--liste">
+        <h2 class="carte__titre">Derniers résultats</h2>
+        <span class="carte__etiquette">{% for j in journees_derniers %}J{{ j }}{% if not loop.last %} • {% endif %}{% endfor %}</span>
+      </div>
+      <div class="liste">
+        {% for m in derniers %}{{ resultat_compact(m) }}{% else %}<p class="vide">Aucun match joué pour l'instant.</p>{% endfor %}
+      </div>
+    </section>
+
+    <section class="carte carte--liste">
+      <div class="carte__entete carte__entete--liste">
+        <h2 class="carte__titre">Prochains matchs</h2>
+        <span class="carte__etiquette">{% for j in journees_prochains %}J{{ j }}{% if not loop.last %} • {% endif %}{% endfor %}</span>
+      </div>
+      <div class="liste">
+        {% for m in prochains %}{{ prochain_compact(m) }}{% else %}<p class="vide">Aucun match à venir.</p>{% endfor %}
+      </div>
+      <a class="lien-fleche" href="{{ url_for('calendrier') }}">Tout le calendrier</a>
+    </section>
+  </aside>
+</div>
+{% endblock %}

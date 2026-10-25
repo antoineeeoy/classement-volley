@@ -1,0 +1,440 @@
+/* ==========================================================================
+   Design system « Apex Volley » : couleurs, polices et espacements
+   (repris du fichier DESIGN.md de la maquette)
+   ========================================================================== */
+:root {
+  --navy: #0f172a;            /* texte principal, titres, chiffres clés */
+  --texte: #0b1c30;
+  --texte-doux: #45464d;
+  --ardoise: #64748b;         /* en-têtes de colonnes, informations secondaires */
+  --discret: #94a3b8;
+  --cobalt: #2563eb;          /* actions, sélection, zone d'accession */
+  --cobalt-fonce: #1d4ed8;
+  --cobalt-clair: #dbe1ff;
+  --cobalt-texte: #00174b;
+  --ambre: #f59e0b;           /* mise en avant, utilisée avec parcimonie */
+  --rouge: #ba1a1a;           /* zone de relégation */
+  --rouge-clair: #ffdad6;
+  --rouge-texte: #93000a;
+  --vert: #059669;
+  --vert-clair: #ecfdf5;
+  --fond: #f8f9ff;
+  --surface: #ffffff;
+  --surface-basse: #eff4ff;
+  --bordure: #e2e8f0;
+  --bordure-forte: #cbd5e1;
+  --zebre: #f8fafc;
+
+  --police-titres: "Barlow Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --police-texte: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  --rayon: 0.5rem;
+  --rayon-carte: 0.75rem;
+  --ombre: 0 1px 3px rgba(15, 23, 42, 0.04);
+  --marge: 2rem;
+  --gouttiere: 1.25rem;
+  color-scheme: light;
+}
+
+@media (max-width: 767px) {
+  :root { --marge: 1rem; --gouttiere: 0.75rem; }
+}
+
+/* ==========================================================================
+   Bases
+   ========================================================================== */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--police-texte);
+  font-size: 14px;
+  line-height: 20px;
+  background: var(--fond);
+  color: var(--texte);
+}
+
+a { color: var(--cobalt); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 2px solid var(--cobalt);
+  outline-offset: 2px;
+}
+
+.conteneur { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 var(--marge); }
+.contenu { padding-top: 1.5rem; padding-bottom: 2.5rem; }
+
+.vide { color: var(--ardoise); margin: 0.5rem 0; }
+.lien-fleche { display: inline-block; margin-top: 0.75rem; font-weight: 600; font-size: 13px; }
+.lien-fleche::after { content: " →"; }
+.lien-discret { color: var(--ardoise); font-size: 12px; font-weight: 600; }
+.icone { width: 16px; height: 16px; color: var(--cobalt); }
+
+/* ==========================================================================
+   Barre du haut
+   ========================================================================== */
+.barre {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--surface);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04);
+}
+.barre__contenu {
+  min-height: 64px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem var(--gouttiere);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.marque { display: flex; align-items: baseline; gap: 0.5rem; color: var(--navy); }
+.marque:hover { text-decoration: none; }
+.marque__logo {
+  align-self: center;
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #fff;
+}
+.marque__logo svg { width: 18px; height: 18px; }
+.marque__nom {
+  font-family: var(--police-titres);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.marque__poule { font-size: 11px; font-weight: 700; color: var(--ardoise); }
+
+/* Onglets façon « segmented control » */
+.onglets { display: flex; gap: 0.25rem; padding: 0.25rem; background: var(--surface-basse); border-radius: var(--rayon); }
+.onglets a {
+  padding: 0.375rem 1rem;
+  border-radius: 0.375rem;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--texte-doux);
+}
+.onglets a:hover { color: var(--navy); text-decoration: none; }
+.onglets a[aria-current="page"] { background: var(--surface); color: var(--navy); box-shadow: var(--ombre), 0 0 0 1px var(--bordure); }
+
+.barre__droite { display: flex; align-items: center; gap: 0.75rem; }
+.barre__saison { font-size: 11px; font-weight: 500; color: var(--texte-doux); }
+@media (max-width: 640px) { .barre__saison { display: none; } }
+
+/* ==========================================================================
+   Boutons, badges et messages
+   ========================================================================== */
+.bouton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: var(--rayon);
+  padding: 0.45rem 0.9rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.bouton:hover { text-decoration: none; }
+.bouton--principal { background: var(--cobalt); color: #fff; }
+.bouton--principal:hover { background: var(--cobalt-fonce); }
+.bouton--secondaire { background: var(--surface); color: var(--navy); border-color: var(--bordure); box-shadow: var(--ombre); }
+.bouton--secondaire:hover { background: var(--zebre); }
+.bouton--fantome { background: transparent; color: var(--ardoise); }
+.bouton--fantome:hover { background: #f1f5f9; }
+
+.badge {
+  display: inline-block;
+  padding: 0.15rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  background: var(--surface-basse);
+  color: var(--ardoise);
+}
+.badge--termine { background: var(--vert-clair); color: var(--vert); }
+
+.message { border-radius: var(--rayon); padding: 0.75rem 1rem; font-weight: 600; margin: 0 0 1rem; }
+.message--succes { background: var(--vert-clair); color: var(--vert); border: 1px solid #a7f3d0; }
+.message--erreur { background: #fff1f2; color: #e11d48; border: 1px solid #fecdd3; }
+
+/* ==========================================================================
+   En-tête de page : fil d'Ariane, titre et résumé
+   ========================================================================== */
+.entete-page { background: rgba(255, 255, 255, 0.8); border-bottom: 1px solid var(--surface-basse); }
+.entete-page__contenu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.fil { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin: 0 0 0.25rem; font-size: 11px; font-weight: 700; color: var(--texte-doux); }
+.fil__principal { color: var(--cobalt); text-transform: uppercase; letter-spacing: 0.05em; }
+.fil__separateur { color: var(--bordure-forte); }
+
+.titre-page {
+  margin: 0;
+  font-family: var(--police-titres);
+  font-size: 32px;
+  line-height: 36px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+@media (max-width: 767px) { .titre-page { font-size: 26px; line-height: 30px; } }
+
+.resume { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0; padding-bottom: 0.25rem; font-size: 13px; color: var(--texte-doux); }
+.resume__element { padding: 0 1.25rem; border-left: 1px solid var(--bordure); }
+.resume__element:first-child { padding-left: 0; border-left: none; }
+.resume__element strong { font-size: 16px; color: var(--navy); font-variant-numeric: tabular-nums; margin-right: 0.25rem; }
+.resume__element strong.accent { color: var(--cobalt); }
+.resume__libelle { font-weight: 600; color: var(--navy); }
+@media (max-width: 767px) {
+  .resume { gap: 0.5rem 1.25rem; }
+  .resume__element { padding: 0; border-left: none; }
+}
+
+/* ==========================================================================
+   Grille et cartes
+   ========================================================================== */
+.grille { display: grid; gap: 2rem; align-items: start; }
+@media (min-width: 1100px) { .grille { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); } }
+.grille__principale, .grille__laterale { display: grid; gap: 1.5rem; min-width: 0; }
+
+.carte {
+  background: var(--surface);
+  border: 1px solid var(--surface-basse);
+  border-radius: var(--rayon-carte);
+  box-shadow: var(--ombre);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+.grille .carte { margin-bottom: 0; }
+.carte--liste { padding: 1rem; }
+
+.carte__entete {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--surface-basse);
+}
+.carte__entete--liste { padding: 0 0 0.75rem; margin-bottom: 0.25rem; }
+.carte__titre {
+  margin: 0;
+  font-family: var(--police-titres);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+.carte__sous-titre { font-family: var(--police-texte); font-size: 11px; font-weight: 700; color: var(--ardoise); text-transform: none; letter-spacing: 0; }
+.carte__etiquette { font-size: 11px; font-weight: 700; color: var(--ardoise); }
+.carte__note { margin: 0; padding: 0.75rem 1rem; font-size: 12px; line-height: 16px; color: var(--ardoise); border-top: 1px solid var(--surface-basse); }
+
+/* Légende des zones et petits points de couleur */
+.legende { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; font-size: 11px; font-weight: 700; color: var(--texte-doux); }
+.legende > span { display: inline-flex; align-items: center; gap: 0.375rem; }
+.point { display: inline-block; width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.legende .point { width: 8px; height: 8px; }
+.point--accession { background: var(--cobalt); }
+.point--barrage { background: var(--ambre); }
+.point--relegation { background: var(--rouge); }
+
+/* ==========================================================================
+   Tableau du classement
+   ========================================================================== */
+.tableau-defilant { overflow-x: auto; }
+.classement { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.classement th {
+  padding: 0.75rem 0.5rem;
+  background: rgba(239, 244, 255, 0.5);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--texte-doux);
+  text-align: left;
+  white-space: nowrap;
+}
+.classement td { padding: 0.875rem 0.5rem; border-top: 1px solid var(--surface-basse); white-space: nowrap; }
+.classement tbody tr { transition: background-color 0.15s; }
+.classement tbody tr:hover { background: rgba(239, 244, 255, 0.4); }
+
+.col-rang { width: 2.75rem; text-align: center !important; padding-left: 1rem !important; font-weight: 600; color: var(--texte-doux); }
+.col-centre { text-align: center !important; }
+.col-equipe { font-size: 14px; }
+.col-equipe .equipe { display: inline-flex; align-items: center; gap: 0.625rem; }
+.col-equipe a { color: var(--texte); font-weight: 500; }
+.col-points { font-size: 16px; font-weight: 700; color: var(--navy); }
+th.col-points { font-size: 11px; color: var(--navy); }
+.col-forme { text-align: right !important; padding-right: 1rem !important; }
+.attenue { color: var(--texte-doux); }
+.fort { font-weight: 600; }
+.discret { color: var(--discret); }
+
+/* Zones d'accession et de relégation */
+.zone--accession { background: rgba(219, 225, 255, 0.18); }
+.zone--accession .col-rang, .zone--accession .col-points { color: var(--cobalt); font-weight: 700; }
+.zone--accession .col-equipe a { font-weight: 600; }
+.zone--barrage { background: rgba(255, 221, 184, 0.18); }
+.zone--barrage .col-rang, .zone--barrage .col-points { color: #b45309; font-weight: 700; }
+.zone--barrage .col-equipe a { font-weight: 600; }
+.zone--relegation { background: rgba(255, 218, 214, 0.18); }
+.zone--relegation .col-rang, .zone--relegation .col-points { color: var(--rouge); font-weight: 700; }
+.zone--relegation .col-equipe a { font-weight: 600; }
+
+/* Équipe suivie : liseré ambre */
+.ligne-suivie td:first-child { box-shadow: inset 3px 0 0 var(--ambre); }
+.ligne-suivie .col-equipe a { font-weight: 700; color: var(--navy); }
+
+@media (max-width: 600px) {
+  .col-secondaire { display: none; }
+  .classement td, .classement th { padding-left: 0.3rem; padding-right: 0.3rem; }
+  .classement .col-rang { width: 2rem; padding-left: 0.6rem !important; }
+  .tableau-defilant { padding-right: 0.5rem; }
+  .classement td.col-equipe { white-space: normal; }
+}
+
+/* Pastilles de forme */
+.forme { display: inline-flex; gap: 0.25rem; }
+.forme__pastille {
+  display: inline-grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 0.25rem;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: default;
+}
+.forme__pastille--v { background: var(--cobalt-clair); color: var(--cobalt-texte); }
+.forme__pastille--d { background: var(--rouge-clair); color: var(--rouge-texte); }
+
+/* ==========================================================================
+   Listes de matchs (colonne de droite, calendrier, fiches équipe)
+   ========================================================================== */
+.liste > * + * { border-top: 1px solid var(--surface-basse); }
+.liste__ligne { padding: 0.625rem 0; font-size: 12px; line-height: 16px; }
+.liste__ligne--resultat { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+
+.equipes-empilees { display: grid; gap: 0.1rem; }
+.equipes-empilees a { color: var(--texte-doux); }
+.equipes-empilees a.gagnant { color: var(--texte); font-weight: 600; }
+
+.score { display: inline-flex; align-items: center; gap: 0.375rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.score__case { min-width: 1.6rem; text-align: center; padding: 0.125rem 0.5rem; border-radius: 0.25rem; background: var(--surface-basse); color: var(--texte-doux); }
+.score__case--gagnant { background: var(--cobalt-clair); color: var(--cobalt-texte); }
+.score__tiret { color: var(--discret); }
+
+.meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.25rem 1rem; font-size: 11px; font-weight: 700; color: var(--ardoise); }
+.affiche { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 0.75rem; padding-top: 0.25rem; font-weight: 500; }
+.affiche a { color: var(--texte); }
+.affiche a:last-child { text-align: right; }
+.vs { font-size: 11px; font-weight: 700; color: var(--discret); }
+
+/* Ligne de match complète : trois colonnes sur grand écran */
+.match { display: grid; gap: 0.5rem; padding: 0.875rem 1rem; }
+/* Dans le calendrier (pleine largeur), chaque match tient sur une ligne de trois colonnes */
+@media (min-width: 900px) {
+  .journee .match { grid-template-columns: 11rem minmax(0, 1fr) 21.5rem; align-items: center; gap: 1.25rem; }
+  .journee .sets { flex-wrap: nowrap; }
+  .journee .match__meta { flex-direction: column; justify-content: center; }
+  .journee .match__details { justify-content: flex-end; }
+}
+.match__affiche { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 0.75rem; font-size: 14px; }
+.match__equipe { color: var(--texte-doux); }
+.match__equipe.gagnant { color: var(--navy); font-weight: 700; }
+.match__equipe--exterieur { text-align: right; }
+.match__affiche .score { font-size: 13px; }
+.match__gymnase { font-weight: 500; }
+.match__details { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem 0.75rem; }
+
+.sets { display: inline-flex; flex-wrap: wrap; gap: 0.25rem; }
+.sets__case {
+  padding: 0.1rem 0.45rem;
+  border: 1px solid var(--bordure);
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--texte-doux);
+}
+
+/* ==========================================================================
+   Calendrier : filtre
+   ========================================================================== */
+.filtre { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1rem; padding: 0.75rem 1rem; font-weight: 600; }
+.filtre .lien-fleche { margin: 0 0 0 auto; }
+select, .formulaire input {
+  font: inherit;
+  color: var(--texte);
+  background: var(--surface);
+  border: 1px solid var(--bordure-forte);
+  border-radius: var(--rayon);
+  padding: 0.45rem 0.7rem;
+}
+select:focus, .formulaire input:focus { outline: 1px solid var(--cobalt); box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12); }
+.journee { scroll-margin-top: 5rem; }
+
+/* ==========================================================================
+   Fiche équipe
+   ========================================================================== */
+.chiffres { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin: 0.5rem 0 0; }
+.chiffres div { background: var(--zebre); border: 1px solid var(--surface-basse); border-radius: var(--rayon); padding: 0.6rem 0.75rem; }
+.chiffres dt { font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ardoise); }
+.chiffres dd { margin: 0.15rem 0 0; font-size: 16px; font-weight: 700; color: var(--navy); font-variant-numeric: tabular-nums; }
+.forme-equipe { display: flex; align-items: center; gap: 0.75rem; margin: 1rem 0 0; }
+.resume sup { font-size: 10px; }
+
+/* ==========================================================================
+   Formulaire de saisie
+   ========================================================================== */
+.formulaire { max-width: 520px; }
+.formulaire > :not(.carte__entete):not(.carte__note) { margin-left: 1rem; margin-right: 1rem; }
+.formulaire__sets { display: grid; grid-template-columns: auto 1fr 1fr; gap: 0.5rem 0.75rem; align-items: center; margin-top: 1rem; }
+.formulaire__equipe { font-size: 12px; font-weight: 700; text-align: center; color: var(--navy); }
+.formulaire__sets input { width: 100%; text-align: center; font-variant-numeric: tabular-nums; }
+.formulaire .carte__note { border-top: none; }
+.formulaire__mdp { display: grid; gap: 0.35rem; font-weight: 600; }
+.formulaire__actions { display: flex; align-items: center; gap: 0.75rem; margin-top: 1.25rem; margin-bottom: 1.25rem; }
+
+/* ==========================================================================
+   Pied de page
+   ========================================================================== */
+.pied { background: var(--surface); box-shadow: 0 -1px 8px rgba(0, 0, 0, 0.02); margin-top: 1rem; }
+.pied__contenu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-top: 1px solid var(--surface-basse);
+  font-size: 12px;
+  color: var(--texte-doux);
+}
+.pied p { margin: 0; }
+.pied__projet { color: var(--texte); font-weight: 500; }
+.pied__liens { display: flex; gap: 1.5rem; font-size: 11px; font-weight: 700; }
+.pied__liens a { color: var(--ardoise); }
+.pied__liens a:hover { color: var(--navy); }
+.pied__date { font-size: 11px; font-weight: 700; color: var(--ardoise); }

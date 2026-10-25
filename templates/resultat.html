@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% from "_macros.html" import entete %}
+
+{% block titre %}Résultat {{ match.nom_domicile }} - {{ match.nom_exterieur }}{% endblock %}
+
+{% block entete_page %}
+  {{ entete(("Corriger" if match.sets else "Saisir") ~ " un résultat",
+            "Journée " ~ match.journee,
+            (match.date | date_fr | capitalize) ~ " à " ~ (match.heure | replace(':', 'h'))) }}
+{% endblock %}
+
+{% block contenu %}
+{% if erreur %}<p class="message message--erreur" role="alert">{{ erreur }}</p>{% endif %}
+
+<form class="carte formulaire" method="post">
+  <div class="carte__entete">
+    <h2 class="carte__titre">{{ match.nom_domicile }} <span class="carte__sous-titre">vs</span> {{ match.nom_exterieur }}</h2>
+  </div>
+  <div class="formulaire__sets">
+    <span></span>
+    <span class="formulaire__equipe">{{ match.nom_domicile }}</span>
+    <span class="formulaire__equipe">{{ match.nom_exterieur }}</span>
+    {% for v in valeurs %}
+      {% set n = loop.index %}
+      <label for="set{{ n }}_domicile">Set {{ n }}{% if n == 5 %} <small>(tie-break)</small>{% endif %}</label>
+      <input id="set{{ n }}_domicile" name="set{{ n }}_domicile" type="number" min="0" max="99"
+             inputmode="numeric" value="{{ v.domicile }}" aria-label="Set {{ n }}, {{ match.nom_domicile }}">
+      <input id="set{{ n }}_exterieur" name="set{{ n }}_exterieur" type="number" min="0" max="99"
+             inputmode="numeric" value="{{ v.exterieur }}" aria-label="Set {{ n }}, {{ match.nom_exterieur }}">
+    {% endfor %}
+  </div>
+  <p class="carte__note">Laissez vides les sets qui n'ont pas été joués.</p>
+
+  <label class="formulaire__mdp" for="mot_de_passe">Mot de passe
+    <input id="mot_de_passe" name="mot_de_passe" type="password" required autocomplete="current-password">
+  </label>
+
+  <div class="formulaire__actions">
+    <button class="bouton bouton--principal" type="submit">Enregistrer</button>
+    <a class="bouton bouton--fantome" href="{{ url_for('calendrier', _anchor='journee-' ~ match.journee) }}">Annuler</a>
+  </div>
+</form>
+{% endblock %}

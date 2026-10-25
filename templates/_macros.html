@@ -1,0 +1,86 @@
+{# En-tête de page : fil d'Ariane, grand titre et résumé à droite #}
+{% macro entete(titre, fil_principal, fil_secondaire) %}
+  <section class="entete-page">
+    <div class="conteneur entete-page__contenu">
+      <div>
+        <p class="fil">
+          <span class="fil__principal">{{ fil_principal }}</span>
+          {% if fil_secondaire %}<span class="fil__separateur">•</span><span>{{ fil_secondaire }}</span>{% endif %}
+        </p>
+        <h1 class="titre-page">{{ titre }}</h1>
+      </div>
+      {% if caller %}<div class="resume">{{ caller() }}</div>{% endif %}
+    </div>
+  </section>
+{% endmacro %}
+
+{# Pastilles de forme : V pour une victoire, D pour une défaite #}
+{% macro forme(resultats) %}
+  <span class="forme">
+    {% for r in resultats %}
+      <span class="forme__pastille forme__pastille--{{ 'v' if r.victoire else 'd' }}"
+            title="{{ 'Victoire' if r.victoire else 'Défaite' }} {{ r.score }} contre {{ r.adversaire }}">{{ 'V' if r.victoire else 'D' }}</span>
+    {% endfor %}
+  </span>
+{% endmacro %}
+
+{# Score en sets dans deux petites cases, celle du vainqueur en bleu #}
+{% macro cases_score(m) %}
+  {% set dom, ext = m.score %}
+  <span class="score">
+    <span class="score__case {% if dom > ext %}score__case--gagnant{% endif %}">{{ dom }}</span>
+    <span class="score__tiret">-</span>
+    <span class="score__case {% if ext > dom %}score__case--gagnant{% endif %}">{{ ext }}</span>
+  </span>
+{% endmacro %}
+
+{# Résultat compact, pour la colonne de droite du classement #}
+{% macro resultat_compact(m) %}
+  <div class="liste__ligne liste__ligne--resultat">
+    <div class="equipes-empilees">
+      <a href="{{ url_for('equipe', equipe_id=m.domicile) }}" class="{% if m.score[0] > m.score[1] %}gagnant{% endif %}">{{ m.nom_domicile }}</a>
+      <a href="{{ url_for('equipe', equipe_id=m.exterieur) }}" class="{% if m.score[1] > m.score[0] %}gagnant{% endif %}">{{ m.nom_exterieur }}</a>
+    </div>
+    {{ cases_score(m) }}
+  </div>
+{% endmacro %}
+
+{# Match à venir compact, pour la colonne de droite du classement #}
+{% macro prochain_compact(m) %}
+  <div class="liste__ligne liste__ligne--prochain">
+    <div class="meta">
+      <span>{{ m.date | date_fr | capitalize }} • {{ m.heure | replace(':', 'h') }}</span>
+      {% if m.gymnase %}<span>{{ m.gymnase }}</span>{% endif %}
+    </div>
+    <div class="affiche">
+      <a href="{{ url_for('equipe', equipe_id=m.domicile) }}">{{ m.nom_domicile }}</a>
+      <span class="vs">vs</span>
+      <a href="{{ url_for('equipe', equipe_id=m.exterieur) }}">{{ m.nom_exterieur }}</a>
+    </div>
+  </div>
+{% endmacro %}
+
+{# Ligne de match complète, pour le calendrier et les fiches équipe #}
+{% macro ligne_match(m, avec_journee=false) %}
+  <article class="match {% if m.sets %}match--joue{% endif %}">
+    <div class="match__meta meta">
+      <span>{% if avec_journee %}J{{ m.journee }} • {% endif %}{{ m.date | date_fr | capitalize }} • {{ m.heure | replace(':', 'h') }}</span>
+      {% if m.gymnase %}<span class="match__gymnase">{{ m.gymnase }}</span>{% endif %}
+    </div>
+    <div class="match__affiche">
+      <a href="{{ url_for('equipe', equipe_id=m.domicile) }}"
+         class="match__equipe {% if m.sets and m.score[0] > m.score[1] %}gagnant{% endif %}">{{ m.nom_domicile }}</a>
+      {% if m.sets %}{{ cases_score(m) }}{% else %}<span class="vs">vs</span>{% endif %}
+      <a href="{{ url_for('equipe', equipe_id=m.exterieur) }}"
+         class="match__equipe match__equipe--exterieur {% if m.sets and m.score[1] > m.score[0] %}gagnant{% endif %}">{{ m.nom_exterieur }}</a>
+    </div>
+    <div class="match__details">
+      {% if m.sets %}
+        <span class="sets">{% for d, e in m.sets %}<span class="sets__case">{{ d }}-{{ e }}</span>{% endfor %}</span>
+      {% else %}
+        <span class="badge">À jouer</span>
+      {% endif %}
+      <a class="lien-discret" href="{{ url_for('saisir_resultat', code=m.code) }}">{% if m.sets %}Corriger{% else %}Saisir le résultat{% endif %}</a>
+    </div>
+  </article>
+{% endmacro %}

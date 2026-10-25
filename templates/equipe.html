@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% from "_macros.html" import entete, forme, ligne_match %}
+
+{% block titre %}{{ equipe.nom_court }}, {{ infos.competition }}{% endblock %}
+
+{% block entete_page %}
+  {% call entete(equipe.nom_court, "Fiche équipe", equipe.nom) %}
+    <div class="resume__element"><strong class="accent">{{ rang }}<sup>{{ 'er' if rang == 1 else 'e' }}</sup></strong> au classement</div>
+    <div class="resume__element"><strong>{{ ligne.points }}</strong> pts</div>
+    <div class="resume__element"><strong>{{ ligne.gagnes }}</strong> victoire{{ 's' if ligne.gagnes > 1 }}</div>
+    <div class="resume__element"><strong>{{ ligne.perdus }}</strong> défaite{{ 's' if ligne.perdus > 1 }}</div>
+  {% endcall %}
+{% endblock %}
+
+{% block contenu %}
+<div class="grille">
+  <div class="grille__principale">
+    <section class="carte">
+      <div class="carte__entete"><h2 class="carte__titre">Matchs joués</h2>
+        <span class="carte__etiquette">{{ joues | length }}</span></div>
+      <div class="liste">
+        {% for m in joues | reverse %}{{ ligne_match(m, avec_journee=true) }}{% else %}<p class="vide">Aucun match joué pour l'instant.</p>{% endfor %}
+      </div>
+    </section>
+    <section class="carte">
+      <div class="carte__entete"><h2 class="carte__titre">Matchs à venir</h2>
+        <span class="carte__etiquette">{{ a_venir | length }}</span></div>
+      <div class="liste">
+        {% for m in a_venir %}{{ ligne_match(m, avec_journee=true) }}{% else %}<p class="vide">Tous les matchs ont été joués.</p>{% endfor %}
+      </div>
+    </section>
+  </div>
+
+  <aside class="grille__laterale">
+    <section class="carte carte--liste">
+      <div class="carte__entete carte__entete--liste"><h2 class="carte__titre">Statistiques</h2></div>
+      <dl class="chiffres">
+        <div><dt>Sets</dt><dd>{{ ligne.sets_pour }}:{{ ligne.sets_contre }}</dd></div>
+        <div><dt>Coeff. sets</dt><dd>{{ ligne.coeff_sets | coeff }}</dd></div>
+        <div><dt>Points</dt><dd>{{ ligne.points_pour }}:{{ ligne.points_contre }}</dd></div>
+        <div><dt>Coeff. points</dt><dd>{{ ligne.coeff_points | coeff }}</dd></div>
+      </dl>
+      <p class="forme-equipe"><span class="resume__libelle">Forme</span>
+        {% if ligne.forme %}{{ forme(ligne.forme) }}{% else %}<span class="vide">aucun match</span>{% endif %}</p>
+      {% if equipe.site_web %}<a class="lien-fleche" href="{{ equipe.site_web }}">Site du club</a>{% endif %}
+    </section>
+  </aside>
+</div>
+{% endblock %}

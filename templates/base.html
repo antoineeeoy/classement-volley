@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block titre %}{{ infos.competition }}{% endblock %}</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏐</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="barre">
+    <div class="conteneur barre__contenu">
+      <a class="marque" href="{{ url_for('classement') }}">
+        <span class="marque__logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <circle cx="12" cy="12" r="9.5"/><path d="M12 2.5c-1.6 3.6-1 7 1.6 9.6"/>
+            <path d="M21.3 10.4c-3.7-.9-7 .2-8.7 3.6"/><path d="M5.3 18.8c2.3-2.9 3-6.3 1.6-9.6"/>
+          </svg>
+        </span>
+        <span class="marque__nom">{{ site.nom }}</span>
+        <span class="marque__poule">• {{ site.poule }}</span>
+      </a>
+
+      <nav class="onglets" aria-label="Navigation principale">
+        <a href="{{ url_for('classement') }}" {% if request.endpoint == 'classement' %}aria-current="page"{% endif %}>Classement</a>
+        <a href="{{ url_for('calendrier') }}" {% if request.endpoint == 'calendrier' %}aria-current="page"{% endif %}>Calendrier &amp; Résultats</a>
+      </nav>
+
+      <div class="barre__droite">
+        <span class="barre__saison">Saison {{ infos.saison }}</span>
+        <a class="bouton bouton--secondaire" href="{{ url_for('exporter_classement') }}" title="Télécharger le classement au format CSV">
+          <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/>
+          </svg>
+          Exporter
+        </a>
+      </div>
+    </div>
+  </header>
+
+  {% block entete_page %}{% endblock %}
+
+  <main class="conteneur contenu">
+    {% for message in get_flashed_messages() %}
+      <p class="message message--succes" role="status">{{ message }}</p>
+    {% endfor %}
+    {% block contenu %}{% endblock %}
+  </main>
+
+  <footer class="pied">
+    <div class="conteneur pied__contenu">
+      <p class="pied__projet">Projet personnel non officiel, sans lien avec la FFvolley ni la Ligue Île-de-France</p>
+      <nav class="pied__liens">
+        <a href="{{ url_for('classement') }}">Classement</a>
+        <a href="{{ url_for('calendrier') }}">Calendrier</a>
+        <a href="{{ infos.source }}">Source des données</a>
+      </nav>
+      <p class="pied__date">Données relevées le {{ infos.releve_le | date_longue }}</p>
+    </div>
+  </footer>
+</body>
+</html>

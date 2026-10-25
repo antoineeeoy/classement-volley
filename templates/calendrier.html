@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% from "_macros.html" import entete, ligne_match %}
+
+{% block titre %}Calendrier{% if equipe %} de {{ equipe.nom_court }}{% endif %}, {{ infos.competition }}{% endblock %}
+
+{% block entete_page %}
+  {% call entete("Calendrier de " ~ equipe.nom_court if equipe else "Calendrier & résultats", site.division, site.zone) %}
+    <div class="resume__element"><strong>{{ nb_matchs }}</strong> matchs</div>
+    <div class="resume__element"><strong>{{ nb_joues }}</strong> joués</div>
+    {% if prochaine %}<div class="resume__element"><strong class="accent">J{{ prochaine }}</strong> à venir</div>{% endif %}
+  {% endcall %}
+{% endblock %}
+
+{% block contenu %}
+<form class="carte filtre" method="get" action="{{ url_for('calendrier') }}">
+  <label for="equipe">Afficher les matchs de</label>
+  <select id="equipe" name="equipe" onchange="this.form.submit()">
+    <option value="">Toutes les équipes</option>
+    {% for e in equipes %}
+      <option value="{{ e.id }}" {% if equipe and e.id == equipe.id %}selected{% endif %}>{{ e.nom_court }}</option>
+    {% endfor %}
+  </select>
+  <noscript><button class="bouton bouton--secondaire" type="submit">Filtrer</button></noscript>
+  {% if prochaine %}<a class="lien-fleche" href="#journee-{{ prochaine }}">Aller à la journée {{ prochaine }}</a>{% endif %}
+</form>
+
+{% for numero, matchs in journees.items() %}
+<section class="carte journee" id="journee-{{ numero }}">
+  <div class="carte__entete">
+    <h2 class="carte__titre">Journée {{ numero }} <span class="carte__sous-titre">• phase {{ 'aller' if numero <= 9 else 'retour' }}</span></h2>
+    {% set joues = matchs | selectattr('sets') | list | length %}
+    <span class="badge {% if joues == matchs | length %}badge--termine{% endif %}">
+      {% if joues == matchs | length %}Terminée{% elif joues %}{{ joues }}/{{ matchs | length }} joués{% else %}À venir{% endif %}
+    </span>
+  </div>
+  <div class="liste">
+    {% for m in matchs %}{{ ligne_match(m) }}{% endfor %}
+  </div>
+</section>
+{% endfor %}
+{% endblock %}

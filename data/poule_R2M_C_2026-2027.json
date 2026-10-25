@@ -1,0 +1,1024 @@
+{
+  "competition": "Championnat Régional 2 Senior Masculin, poule C",
+  "ligue": "Ligue Île-de-France de volley-ball",
+  "saison": "2026/2027",
+  "source": "https://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php?saison=2026/2027&codent=LIIDF&poule=2MC",
+  "releve_le": "2026-10-23",
+  "equipes": [
+    {
+      "id": "CARRIERES",
+      "nom": "UNION SPORTIVE CARRIERES SUR SEINE",
+      "nom_court": "Carrières-sur-Seine",
+      "site_web": "http://uscarrieres-volley.clubeo.com/"
+    },
+    {
+      "id": "SARTROUVILLE",
+      "nom": "AS. SP DE SARTROUVILLE 3",
+      "nom_court": "Sartrouville 3",
+      "site_web": "http://www.sartrouvillevolley.com/"
+    },
+    {
+      "id": "VALEUROPE",
+      "nom": "FS VAL D'EUROPE ESBLY COUPVRAY VB 2",
+      "nom_court": "Val d'Europe 2",
+      "site_web": "http://www.valdeurope-volley.fr"
+    },
+    {
+      "id": "BUSSY",
+      "nom": "BUSSY VOLLEY",
+      "nom_court": "Bussy Volley",
+      "site_web": "http://bussyvolley.fr"
+    },
+    {
+      "id": "LEVALLOIS",
+      "nom": "LEVALLOIS SPORTING CLUB 1",
+      "nom_court": "Levallois 1",
+      "site_web": "http://www.volley-levalloissportingclub.fr/"
+    },
+    {
+      "id": "COLOMBES",
+      "nom": "LSO COLOMBES 1",
+      "nom_court": "Colombes 1",
+      "site_web": "https://lsoc.clubeo.com"
+    },
+    {
+      "id": "FRANCONVILLE",
+      "nom": "SOCIETE VB FRANCONVILLE",
+      "nom_court": "Franconville",
+      "site_web": "http://svbf95.free.fr"
+    },
+    {
+      "id": "COURCOURONNES",
+      "nom": "CLUB OMNISPORTS DE COURCOURONNES -SECTION VB 1",
+      "nom_court": "Courcouronnes 1",
+      "site_web": null
+    },
+    {
+      "id": "ANTONY",
+      "nom": "ANTONY VOLLEY 2",
+      "nom_court": "Antony 2",
+      "site_web": "http://www.antonyvolley.fr"
+    },
+    {
+      "id": "FONTENAY",
+      "nom": "US FONTENAYSIENNE",
+      "nom_court": "Fontenay",
+      "site_web": "https://www.us-fontenay.com/activite/volley-ball/"
+    }
+  ],
+  "matchs": [
+    {
+      "code": "2MCA001",
+      "journee": 1,
+      "date": "2026-10-04",
+      "heure": "14:00",
+      "domicile": "FRANCONVILLE",
+      "exterieur": "CARRIERES",
+      "gymnase": null,
+      "sets": [
+        "14:25",
+        "29:27",
+        "20:25",
+        "18:25"
+      ]
+    },
+    {
+      "code": "2MCA002",
+      "journee": 1,
+      "date": "2026-10-03",
+      "heure": "21:00",
+      "domicile": "COURCOURONNES",
+      "exterieur": "COLOMBES",
+      "gymnase": null,
+      "sets": [
+        "23:25",
+        "28:30",
+        "25:14",
+        "25:19",
+        "13:15"
+      ]
+    },
+    {
+      "code": "2MCA003",
+      "journee": 1,
+      "date": "2026-10-04",
+      "heure": "14:00",
+      "domicile": "LEVALLOIS",
+      "exterieur": "BUSSY",
+      "gymnase": null,
+      "sets": [
+        "25:22",
+        "25:21",
+        "17:25",
+        "21:25",
+        "11:15"
+      ]
+    },
+    {
+      "code": "2MCA004",
+      "journee": 1,
+      "date": "2026-10-04",
+      "heure": "14:00",
+      "domicile": "VALEUROPE",
+      "exterieur": "ANTONY",
+      "gymnase": null,
+      "sets": [
+        "25:23",
+        "25:22",
+        "25:18"
+      ]
+    },
+    {
+      "code": "2MCA005",
+      "journee": 1,
+      "date": "2026-10-03",
+      "heure": "21:00",
+      "domicile": "FONTENAY",
+      "exterieur": "SARTROUVILLE",
+      "gymnase": null,
+      "sets": [
+        "25:27",
+        "22:25",
+        "22:25"
+      ]
+    },
+    {
+      "code": "2MCA006",
+      "journee": 2,
+      "date": "2026-10-10",
+      "heure": "21:00",
+      "domicile": "FONTENAY",
+      "exterieur": "CARRIERES",
+      "gymnase": null,
+      "sets": [
+        "23:25",
+        "21:25",
+        "20:25"
+      ]
+    },
+    {
+      "code": "2MCA007",
+      "journee": 2,
+      "date": "2026-10-10",
+      "heure": "19:30",
+      "domicile": "SARTROUVILLE",
+      "exterieur": "VALEUROPE",
+      "gymnase": null,
+      "sets": [
+        "25:18",
+        "25:23",
+        "14:25",
+        "25:20"
+      ]
+    },
+    {
+      "code": "2MCA008",
+      "journee": 2,
+      "date": "2026-10-11",
+      "heure": "16:00",
+      "domicile": "ANTONY",
+      "exterieur": "LEVALLOIS",
+      "gymnase": null,
+      "sets": [
+        "25:19",
+        "12:25",
+        "17:25",
+        "19:25"
+      ]
+    },
+    {
+      "code": "2MCA009",
+      "journee": 2,
+      "date": "2026-10-10",
+      "heure": "19:00",
+      "domicile": "BUSSY",
+      "exterieur": "COURCOURONNES",
+      "gymnase": null,
+      "sets": [
+        "25:13",
+        "26:24",
+        "26:24"
+      ]
+    },
+    {
+      "code": "2MCA010",
+      "journee": 2,
+      "date": "2026-10-10",
+      "heure": "18:30",
+      "domicile": "COLOMBES",
+      "exterieur": "FRANCONVILLE",
+      "gymnase": null,
+      "sets": [
+        "22:25",
+        "27:25",
+        "18:25",
+        "25:14",
+        "9:15"
+      ]
+    },
+    {
+      "code": "2MCA011",
+      "journee": 3,
+      "date": "2026-10-24",
+      "heure": "21:00",
+      "domicile": "CARRIERES",
+      "exterieur": "COLOMBES",
+      "gymnase": "Gymnase des Alouettes",
+      "sets": []
+    },
+    {
+      "code": "2MCA012",
+      "journee": 3,
+      "date": "2026-10-25",
+      "heure": "14:00",
+      "domicile": "FRANCONVILLE",
+      "exterieur": "BUSSY",
+      "gymnase": "Gymnase du Bel Air",
+      "sets": []
+    },
+    {
+      "code": "2MCA013",
+      "journee": 3,
+      "date": "2026-10-25",
+      "heure": "13:00",
+      "domicile": "COURCOURONNES",
+      "exterieur": "ANTONY",
+      "gymnase": "Gymnase Colette Besson",
+      "sets": []
+    },
+    {
+      "code": "2MCA014",
+      "journee": 3,
+      "date": "2026-10-25",
+      "heure": "13:30",
+      "domicile": "LEVALLOIS",
+      "exterieur": "SARTROUVILLE",
+      "gymnase": "Marie-Claire Restoux",
+      "sets": []
+    },
+    {
+      "code": "2MCA015",
+      "journee": 3,
+      "date": "2026-10-18",
+      "heure": "16:30",
+      "domicile": "VALEUROPE",
+      "exterieur": "FONTENAY",
+      "gymnase": null,
+      "sets": [
+        "25:17",
+        "25:16",
+        "25:13"
+      ]
+    },
+    {
+      "code": "2MCA016",
+      "journee": 4,
+      "date": "2026-11-08",
+      "heure": "14:00",
+      "domicile": "VALEUROPE",
+      "exterieur": "CARRIERES",
+      "gymnase": "Gymnase David Douillet",
+      "sets": []
+    },
+    {
+      "code": "2MCA017",
+      "journee": 4,
+      "date": "2026-11-07",
+      "heure": "21:00",
+      "domicile": "FONTENAY",
+      "exterieur": "LEVALLOIS",
+      "gymnase": "Colette Besson",
+      "sets": []
+    },
+    {
+      "code": "2MCA018",
+      "journee": 4,
+      "date": "2026-11-07",
+      "heure": "19:30",
+      "domicile": "SARTROUVILLE",
+      "exterieur": "COURCOURONNES",
+      "gymnase": "Gymnase Carnot",
+      "sets": []
+    },
+    {
+      "code": "2MCA019",
+      "journee": 4,
+      "date": "2026-11-08",
+      "heure": "16:00",
+      "domicile": "ANTONY",
+      "exterieur": "FRANCONVILLE",
+      "gymnase": "Gymnase Pajeaud",
+      "sets": []
+    },
+    {
+      "code": "2MCA020",
+      "journee": 4,
+      "date": "2026-11-07",
+      "heure": "19:00",
+      "domicile": "BUSSY",
+      "exterieur": "COLOMBES",
+      "gymnase": "Complexe Sportif Herzog",
+      "sets": []
+    },
+    {
+      "code": "2MCA021",
+      "journee": 5,
+      "date": "2026-11-21",
+      "heure": "20:00",
+      "domicile": "CARRIERES",
+      "exterieur": "BUSSY",
+      "gymnase": "Gymnase des Alouettes",
+      "sets": []
+    },
+    {
+      "code": "2MCA022",
+      "journee": 5,
+      "date": "2026-11-21",
+      "heure": "18:30",
+      "domicile": "COLOMBES",
+      "exterieur": "ANTONY",
+      "gymnase": "Gymnase Ambroise Paré",
+      "sets": []
+    },
+    {
+      "code": "2MCA023",
+      "journee": 5,
+      "date": "2026-11-22",
+      "heure": "14:00",
+      "domicile": "FRANCONVILLE",
+      "exterieur": "SARTROUVILLE",
+      "gymnase": "Gymnase de l'Europe",
+      "sets": []
+    },
+    {
+      "code": "2MCA024",
+      "journee": 5,
+      "date": "2026-11-22",
+      "heure": "13:00",
+      "domicile": "COURCOURONNES",
+      "exterieur": "FONTENAY",
+      "gymnase": "Gymnase Colette Besson",
+      "sets": []
+    },
+    {
+      "code": "2MCA025",
+      "journee": 5,
+      "date": "2026-11-22",
+      "heure": "13:30",
+      "domicile": "LEVALLOIS",
+      "exterieur": "VALEUROPE",
+      "gymnase": "Marie-Claire Restoux",
+      "sets": []
+    },
+    {
+      "code": "2MCA026",
+      "journee": 6,
+      "date": "2026-11-29",
+      "heure": "13:30",
+      "domicile": "LEVALLOIS",
+      "exterieur": "CARRIERES",
+      "gymnase": "Marie-Claire Restoux",
+      "sets": []
+    },
+    {
+      "code": "2MCA027",
+      "journee": 6,
+      "date": "2026-12-13",
+      "heure": "14:00",
+      "domicile": "VALEUROPE",
+      "exterieur": "COURCOURONNES",
+      "gymnase": "Gymnase David Douillet",
+      "sets": []
+    },
+    {
+      "code": "2MCA028",
+      "journee": 6,
+      "date": "2026-11-28",
+      "heure": "21:00",
+      "domicile": "FONTENAY",
+      "exterieur": "FRANCONVILLE",
+      "gymnase": "Colette Besson",
+      "sets": []
+    },
+    {
+      "code": "2MCA029",
+      "journee": 6,
+      "date": "2026-11-28",
+      "heure": "19:30",
+      "domicile": "SARTROUVILLE",
+      "exterieur": "COLOMBES",
+      "gymnase": "Gymnase Joliot Curie",
+      "sets": []
+    },
+    {
+      "code": "2MCA030",
+      "journee": 6,
+      "date": "2026-11-29",
+      "heure": "16:00",
+      "domicile": "ANTONY",
+      "exterieur": "BUSSY",
+      "gymnase": "Gymnase Pajeaud",
+      "sets": []
+    },
+    {
+      "code": "2MCA031",
+      "journee": 7,
+      "date": "2026-12-05",
+      "heure": "21:00",
+      "domicile": "CARRIERES",
+      "exterieur": "ANTONY",
+      "gymnase": "Gymnase des Alouettes",
+      "sets": []
+    },
+    {
+      "code": "2MCA032",
+      "journee": 7,
+      "date": "2026-12-05",
+      "heure": "19:00",
+      "domicile": "BUSSY",
+      "exterieur": "SARTROUVILLE",
+      "gymnase": "Complexe Sportif Herzog",
+      "sets": []
+    },
+    {
+      "code": "2MCA033",
+      "journee": 7,
+      "date": "2026-12-05",
+      "heure": "18:30",
+      "domicile": "COLOMBES",
+      "exterieur": "FONTENAY",
+      "gymnase": "Gymnase Ambroise Paré",
+      "sets": []
+    },
+    {
+      "code": "2MCA034",
+      "journee": 7,
+      "date": "2026-12-06",
+      "heure": "14:00",
+      "domicile": "FRANCONVILLE",
+      "exterieur": "VALEUROPE",
+      "gymnase": "Gymnase de l'Europe",
+      "sets": []
+    },
+    {
+      "code": "2MCA035",
+      "journee": 7,
+      "date": "2026-12-06",
+      "heure": "13:00",
+      "domicile": "COURCOURONNES",
+      "exterieur": "LEVALLOIS",
+      "gymnase": "Gymnase Colette Besson",
+      "sets": []
+    },
+    {
+      "code": "2MCA036",
+      "journee": 8,
+      "date": "2026-12-20",
+      "heure": "13:00",
+      "domicile": "COURCOURONNES",
+      "exterieur": "CARRIERES",
+      "gymnase": "Gymnase Colette Besson",
+      "sets": []
+    },
+    {
+      "code": "2MCA037",
+      "journee": 8,
+      "date": "2026-12-20",
+      "heure": "13:30",
+      "domicile": "LEVALLOIS",
+      "exterieur": "FRANCONVILLE",
+      "gymnase": "Marie-Claire Restoux",
+      "sets": []
+    },
+    {
+      "code": "2MCA038",
+      "journee": 8,
+      "date": "2026-11-15",
+      "heure": "14:00",
+      "domicile": "VALEUROPE",
+      "exterieur": "COLOMBES",
+      "gymnase": "Gymnase David Douillet",
+      "sets": []
+    },
+    {
+      "code": "2MCA039",
+      "journee": 8,
+      "date": "2026-12-19",
+      "heure": "21:00",
+      "domicile": "FONTENAY",
+      "exterieur": "BUSSY",
+      "gymnase": "Colette Besson",
+      "sets": []
+    },
+    {
+      "code": "2MCA040",
+      "journee": 8,
+      "date": "2026-12-19",
+      "heure": "19:30",
+      "domicile": "SARTROUVILLE",
+      "exterieur": "ANTONY",
+      "gymnase": "Gymnase Joliot Curie",
+      "sets": []
+    },
+    {
+      "code": "2MCA041",
+      "journee": 9,
+      "date": "2027-01-09",
+      "heure": "20:00",
+      "domicile": "CARRIERES",
+      "exterieur": "SARTROUVILLE",
+      "gymnase": "Gymnase des Alouettes",
+      "sets": []
+    },
+    {
+      "code": "2MCA042",
+      "journee": 9,
+      "date": "2027-01-10",
+      "heure": "16:00",
+      "domicile": "ANTONY",
+      "exterieur": "FONTENAY",
+      "gymnase": "Gymnase Pajeaud",
+      "sets": []
+    },
+    {
+      "code": "2MCA043",
+      "journee": 9,
+      "date": "2027-01-09",
+      "heure": "19:00",
+      "domicile": "BUSSY",
+      "exterieur": "VALEUROPE",
+      "gymnase": "Complexe Sportif Herzog",
+      "sets": []
+    },
+    {
+      "code": "2MCA044",
+      "journee": 9,
+      "date": "2027-01-09",
+      "heure": "18:30",
+      "domicile": "COLOMBES",
+      "exterieur": "LEVALLOIS",
+      "gymnase": "Gymnase Ambroise Paré",
+      "sets": []
+    },
+    {
+      "code": "2MCA045",
+      "journee": 9,
+      "date": "2027-01-10",
+      "heure": "14:00",
+      "domicile": "FRANCONVILLE",
+      "exterieur": "COURCOURONNES",
+      "gymnase": "Gymnase de l'Europe",
+      "sets": []
+    },
+    {
+      "code": "2MCR046",
+      "journee": 10,
+      "date": "2027-01-16",
+      "heure": "21:00",
+      "domicile": "CARRIERES",
+      "exterieur": "FRANCONVILLE",
+      "gymnase": "Gymnase des Alouettes",
+      "sets": []
+    },
+    {
+      "code": "2MCR047",
+      "journee": 10,
+      "date": "2027-01-16",
+      "heure": "18:30",
+      "domicile": "COLOMBES",
+      "exterieur": "COURCOURONNES",
+      "gymnase": "Gymnase Ambroise Paré",
+      "sets": []
+    },
+    {
+      "code": "2MCR048",
+      "journee": 10,
+      "date": "2027-01-16",
+      "heure": "19:00",
+      "domicile": "BUSSY",
+      "exterieur": "LEVALLOIS",
+      "gymnase": "Complexe Sportif Herzog",
+      "sets": []
+    },
+    {
+      "code": "2MCR049",
+      "journee": 10,
+      "date": "2027-01-17",
+      "heure": "16:00",
+      "domicile": "ANTONY",
+      "exterieur": "VALEUROPE",
+      "gymnase": "Gymnase Pajeaud",
+      "sets": []
+    },
+    {
+      "code": "2MCR050",
+      "journee": 10,
+      "date": "2027-01-16",
+      "heure": "19:30",
+      "domicile": "SARTROUVILLE",
+      "exterieur": "FONTENAY",
+      "gymnase": "Gymnase Carnot",
+      "sets": []
+    },
+    {
+      "code": "2MCR051",
+      "journee": 11,
+      "date": "2027-01-30",
+      "heure": "21:00",
+      "domicile": "CARRIERES",
+      "exterieur": "FONTENAY",
+      "gymnase": "Gymnase des Alouettes",
+      "sets": []
+    },
+    {
+      "code": "2MCR052",
+      "journee": 11,
+      "date": "2027-01-30",
+      "heure": "21:00",
+      "domicile": "VALEUROPE",
+      "exterieur": "SARTROUVILLE",
+      "gymnase": "Halle des Sports",
+      "sets": []
+    },
+    {
+      "code": "2MCR053",
+      "journee": 11,
+      "date": "2027-01-31",
+      "heure": "13:30",
+      "domicile": "LEVALLOIS",
+      "exterieur": "ANTONY",
+      "gymnase": "Marie-Claire Restoux",
+      "sets": []
+    },
+    {
+      "code": "2MCR054",
+      "journee": 11,
+      "date": "2027-01-31",
+      "heure": "13:00",
+      "domicile": "COURCOURONNES",
+      "exterieur": "BUSSY",
+      "gymnase": "Gymnase Colette Besson",
+      "sets": []
+    },
+    {
+      "code": "2MCR055",
+      "journee": 11,
+      "date": "2027-01-31",
+      "heure": "14:00",
+      "domicile": "FRANCONVILLE",
+      "exterieur": "COLOMBES",
+      "gymnase": "Gymnase de l'Europe",
+      "sets": []
+    },
+    {
+      "code": "2MCR056",
+      "journee": 12,
+      "date": "2027-02-21",
+      "heure": "15:00",
+      "domicile": "COLOMBES",
+      "exterieur": "CARRIERES",
+      "gymnase": "Gymnase Ambroise Paré",
+      "sets": []
+    },
+    {
+      "code": "2MCR057",
+      "journee": 12,
+      "date": "2027-02-20",
+      "heure": "19:00",
+      "domicile": "BUSSY",
+      "exterieur": "FRANCONVILLE",
+      "gymnase": "Complexe Sportif Herzog",
+      "sets": []
+    },
+    {
+      "code": "2MCR058",
+      "journee": 12,
+      "date": "2027-02-21",
+      "heure": "16:00",
+      "domicile": "ANTONY",
+      "exterieur": "COURCOURONNES",
+      "gymnase": "Gymnase Pajeaud",
+      "sets": []
+    },
+    {
+      "code": "2MCR059",
+      "journee": 12,
+      "date": "2027-02-20",
+      "heure": "19:30",
+      "domicile": "SARTROUVILLE",
+      "exterieur": "LEVALLOIS",
+      "gymnase": "Gymnase Joliot Curie",
+      "sets": []
+    },
+    {
+      "code": "2MCR060",
+      "journee": 12,
+      "date": "2027-02-20",
+      "heure": "21:00",
+      "domicile": "FONTENAY",
+      "exterieur": "VALEUROPE",
+      "gymnase": "Colette Besson",
+      "sets": []
+    },
+    {
+      "code": "2MCR061",
+      "journee": 13,
+      "date": "2027-02-27",
+      "heure": "21:00",
+      "domicile": "CARRIERES",
+      "exterieur": "VALEUROPE",
+      "gymnase": "Gymnase des Alouettes",
+      "sets": []
+    },
+    {
+      "code": "2MCR062",
+      "journee": 13,
+      "date": "2027-02-28",
+      "heure": "13:30",
+      "domicile": "LEVALLOIS",
+      "exterieur": "FONTENAY",
+      "gymnase": "Marie-Claire Restoux",
+      "sets": []
+    },
+    {
+      "code": "2MCR063",
+      "journee": 13,
+      "date": "2027-02-28",
+      "heure": "13:00",
+      "domicile": "COURCOURONNES",
+      "exterieur": "SARTROUVILLE",
+      "gymnase": "Gymnase Colette Besson",
+      "sets": []
+    },
+    {
+      "code": "2MCR064",
+      "journee": 13,
+      "date": "2027-02-28",
+      "heure": "14:00",
+      "domicile": "FRANCONVILLE",
+      "exterieur": "ANTONY",
+      "gymnase": "Gymnase de l'Europe",
+      "sets": []
+    },
+    {
+      "code": "2MCR065",
+      "journee": 13,
+      "date": "2027-02-27",
+      "heure": "18:30",
+      "domicile": "COLOMBES",
+      "exterieur": "BUSSY",
+      "gymnase": "Gymnase Ambroise Paré",
+      "sets": []
+    },
+    {
+      "code": "2MCR066",
+      "journee": 14,
+      "date": "2027-03-06",
+      "heure": "19:00",
+      "domicile": "BUSSY",
+      "exterieur": "CARRIERES",
+      "gymnase": "Complexe Sportif Herzog",
+      "sets": []
+    },
+    {
+      "code": "2MCR067",
+      "journee": 14,
+      "date": "2027-03-07",
+      "heure": "16:00",
+      "domicile": "ANTONY",
+      "exterieur": "COLOMBES",
+      "gymnase": "Gymnase Pajeaud",
+      "sets": []
+    },
+    {
+      "code": "2MCR068",
+      "journee": 14,
+      "date": "2027-03-06",
+      "heure": "19:30",
+      "domicile": "SARTROUVILLE",
+      "exterieur": "FRANCONVILLE",
+      "gymnase": "Gymnase Joliot Curie",
+      "sets": []
+    },
+    {
+      "code": "2MCR069",
+      "journee": 14,
+      "date": "2027-03-13",
+      "heure": "21:00",
+      "domicile": "FONTENAY",
+      "exterieur": "COURCOURONNES",
+      "gymnase": "Colette Besson",
+      "sets": []
+    },
+    {
+      "code": "2MCR070",
+      "journee": 14,
+      "date": "2027-03-07",
+      "heure": "14:00",
+      "domicile": "VALEUROPE",
+      "exterieur": "LEVALLOIS",
+      "gymnase": "Gymnase David Douillet",
+      "sets": []
+    },
+    {
+      "code": "2MCR071",
+      "journee": 15,
+      "date": "2027-03-20",
+      "heure": "20:00",
+      "domicile": "CARRIERES",
+      "exterieur": "LEVALLOIS",
+      "gymnase": "Gymnase des Alouettes",
+      "sets": []
+    },
+    {
+      "code": "2MCR072",
+      "journee": 15,
+      "date": "2027-03-21",
+      "heure": "13:00",
+      "domicile": "COURCOURONNES",
+      "exterieur": "VALEUROPE",
+      "gymnase": "Gymnase Colette Besson",
+      "sets": []
+    },
+    {
+      "code": "2MCR073",
+      "journee": 15,
+      "date": "2027-03-21",
+      "heure": "14:00",
+      "domicile": "FRANCONVILLE",
+      "exterieur": "FONTENAY",
+      "gymnase": "Gymnase du Bel Air",
+      "sets": []
+    },
+    {
+      "code": "2MCR074",
+      "journee": 15,
+      "date": "2027-03-20",
+      "heure": "18:30",
+      "domicile": "COLOMBES",
+      "exterieur": "SARTROUVILLE",
+      "gymnase": "Gymnase Ambroise Paré",
+      "sets": []
+    },
+    {
+      "code": "2MCR075",
+      "journee": 15,
+      "date": "2027-03-20",
+      "heure": "19:00",
+      "domicile": "BUSSY",
+      "exterieur": "ANTONY",
+      "gymnase": "Complexe Sportif Herzog",
+      "sets": []
+    },
+    {
+      "code": "2MCR076",
+      "journee": 16,
+      "date": "2027-04-04",
+      "heure": "16:00",
+      "domicile": "ANTONY",
+      "exterieur": "CARRIERES",
+      "gymnase": "Gymnase Pajeaud",
+      "sets": []
+    },
+    {
+      "code": "2MCR077",
+      "journee": 16,
+      "date": "2027-04-03",
+      "heure": "19:30",
+      "domicile": "SARTROUVILLE",
+      "exterieur": "BUSSY",
+      "gymnase": "Gymnase Carnot",
+      "sets": []
+    },
+    {
+      "code": "2MCR078",
+      "journee": 16,
+      "date": "2027-04-03",
+      "heure": "21:00",
+      "domicile": "FONTENAY",
+      "exterieur": "COLOMBES",
+      "gymnase": "Colette Besson",
+      "sets": []
+    },
+    {
+      "code": "2MCR079",
+      "journee": 16,
+      "date": "2027-04-04",
+      "heure": "14:00",
+      "domicile": "VALEUROPE",
+      "exterieur": "FRANCONVILLE",
+      "gymnase": "Gymnase David Douillet",
+      "sets": []
+    },
+    {
+      "code": "2MCR080",
+      "journee": 16,
+      "date": "2027-04-04",
+      "heure": "13:30",
+      "domicile": "LEVALLOIS",
+      "exterieur": "COURCOURONNES",
+      "gymnase": "Marie-Claire Restoux",
+      "sets": []
+    },
+    {
+      "code": "2MCR081",
+      "journee": 17,
+      "date": "2027-04-17",
+      "heure": "21:00",
+      "domicile": "CARRIERES",
+      "exterieur": "COURCOURONNES",
+      "gymnase": "Gymnase des Alouettes",
+      "sets": []
+    },
+    {
+      "code": "2MCR082",
+      "journee": 17,
+      "date": "2027-04-18",
+      "heure": "14:00",
+      "domicile": "FRANCONVILLE",
+      "exterieur": "LEVALLOIS",
+      "gymnase": "Gymnase de l'Europe",
+      "sets": []
+    },
+    {
+      "code": "2MCR083",
+      "journee": 17,
+      "date": "2027-03-27",
+      "heure": "18:30",
+      "domicile": "COLOMBES",
+      "exterieur": "VALEUROPE",
+      "gymnase": "Gymnase Ambroise Paré",
+      "sets": []
+    },
+    {
+      "code": "2MCR084",
+      "journee": 17,
+      "date": "2027-04-17",
+      "heure": "19:00",
+      "domicile": "BUSSY",
+      "exterieur": "FONTENAY",
+      "gymnase": "Complexe Sportif Herzog",
+      "sets": []
+    },
+    {
+      "code": "2MCR085",
+      "journee": 17,
+      "date": "2027-04-18",
+      "heure": "16:00",
+      "domicile": "ANTONY",
+      "exterieur": "SARTROUVILLE",
+      "gymnase": "Gymnase Pajeaud",
+      "sets": []
+    },
+    {
+      "code": "2MCR086",
+      "journee": 18,
+      "date": "2027-04-24",
+      "heure": "19:30",
+      "domicile": "SARTROUVILLE",
+      "exterieur": "CARRIERES",
+      "gymnase": "Gymnase Joliot Curie",
+      "sets": []
+    },
+    {
+      "code": "2MCR087",
+      "journee": 18,
+      "date": "2027-04-24",
+      "heure": "21:00",
+      "domicile": "FONTENAY",
+      "exterieur": "ANTONY",
+      "gymnase": "Colette Besson",
+      "sets": []
+    },
+    {
+      "code": "2MCR088",
+      "journee": 18,
+      "date": "2027-04-25",
+      "heure": "14:00",
+      "domicile": "VALEUROPE",
+      "exterieur": "BUSSY",
+      "gymnase": "Gymnase David Douillet",
+      "sets": []
+    },
+    {
+      "code": "2MCR089",
+      "journee": 18,
+      "date": "2027-04-25",
+      "heure": "13:30",
+      "domicile": "LEVALLOIS",
+      "exterieur": "COLOMBES",
+      "gymnase": "Marie-Claire Restoux",
+      "sets": []
+    },
+    {
+      "code": "2MCR090",
+      "journee": 18,
+      "date": "2027-04-25",
+      "heure": "13:00",
+      "domicile": "COURCOURONNES",
+      "exterieur": "FRANCONVILLE",
+      "gymnase": "Gymnase Colette Besson",
+      "sets": []
+    }
+  ]
+}
