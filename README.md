@@ -1,6 +1,6 @@
 # Classement de volley-ball : Régionale 2 masculine, poule C
 
-![Tests](https://github.com/antoineeeoy/classement-volley/actions/workflows/tests.yml/badge.svg)
+![Tests](https://github.com/TON-PSEUDO/classement-volley/actions/workflows/tests.yml/badge.svg)
 
 Site web réalisé avec **Flask** qui affiche le classement, le calendrier et les résultats d'un
 vrai championnat de volley-ball : la Régionale 2 senior masculine (poule C) de la Ligue
@@ -88,6 +88,17 @@ Le script fonctionne comme un petit pipeline de données :
 Avant d'enregistrer un résultat, il vérifie que les deux équipes correspondent bien au match,
 que le score respecte les règles du volley et que le total des points affiché est cohérent avec
 les sets. Un résultat douteux n'est jamais enregistré : il est signalé dans le compte rendu.
+
+### Mise à jour automatique
+
+Le site en ligne est mis à jour tout seul, sans ordinateur allumé : chaque lundi matin, le
+workflow GitHub Actions `mise-a-jour.yml` reconstruit la base, importe les derniers résultats
+depuis le site de la fédération, envoie la base sur PythonAnywhere par son API, puis redémarre le
+site. Si l'import échoue, le workflow s'arrête avant l'envoi et le site en ligne reste inchangé.
+On peut aussi le lancer à la main depuis l'onglet **Actions** (bouton « Run workflow »).
+
+Il a besoin d'un secret `PA_TOKEN` (le jeton d'API PythonAnywhere), à ajouter dans
+**Settings > Secrets and variables > Actions** du dépôt.
 
 ## Organisation du code
 

@@ -1,0 +1,45 @@
+# Mise à jour automatique du site : chaque lundi matin, GitHub récupère les derniers résultats
+# sur le site de la fédération, puis envoie la base à jour sur PythonAnywhere et redémarre le site.
+# Si l'import échoue, le workflow s'arrête avant l'envoi : le site en ligne n'est pas modifié.
+name: Mise à jour des résultats
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"   # chaque lundi à 6 h UTC, soit 7 h ou 8 h à Paris
+  workflow_dispatch:       # ajoute un bouton « Run workflow » pour lancer la mise à jour à la main
+
+jobs:
+  mise-a-jour:
+    runs-on: ubuntu-latest
+    env:
+      PA_USER: antoineusochea          # ton nom d'utilisateur PythonAnywhere
+      PA_HOST: www.pythonanywhere.com
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installer les dépendances
+        run: pip install -r requirements.txt
+
+      - name: Construire la base à partir des données de départ
+        run: flask --app app init-db
+
+      - name: Importer les résultats depuis le site de la fédération
+        run: flask --app app importer
+
+      - name: Envoyer la base sur PythonAnywhere
+        run: |
+          curl --fail -sS -X POST \
+            -H "Authorization: Token ${{ secrets.PA_TOKEN }}" \
+            -F "content=@volley.db" \
+            "https://$PA_HOST/api/v0/user/$PA_USER/files/path/home/$PA_USER/classement-volley/volley.db"
+
+      - name: Redémarrer le site
+        run: |
+          curl --fail -sS -X POST \
+            -H "Authorization: Token ${{ secrets.PA_TOKEN }}" \
+            "https://$PA_HOST/api/v0/user/$PA_USER/webapps/$PA_USER.pythonanywhere.com/reload/"

@@ -158,6 +158,7 @@ def test_commande_importer(app, monkeypatch):
 
     resultat = app.test_cli_runner().invoke(args=["importer"])
 
+    assert resultat.exit_code == 0
     assert "90 matchs trouvés" in resultat.output
     assert "Nouveaux résultats" in resultat.output
     assert "Franconville - Bussy Volley : 1-3" in resultat.output
@@ -169,6 +170,7 @@ def test_commande_importer_page_illisible(app, monkeypatch):
     resultat = app.test_cli_runner().invoke(args=["importer"])
 
     assert "Aucun match reconnu" in resultat.output
+    assert resultat.exit_code == 1  # la mise à jour automatique doit s'arrêter
 
 
 def test_commande_importer_sans_connexion(app, monkeypatch):
@@ -179,3 +181,4 @@ def test_commande_importer_sans_connexion(app, monkeypatch):
     resultat = app.test_cli_runner().invoke(args=["importer"])
 
     assert "Impossible de récupérer la page" in resultat.output
+    assert resultat.exit_code == 1

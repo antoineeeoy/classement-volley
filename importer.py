@@ -167,13 +167,13 @@ def importer_command(simulation):
     except requests.RequestException as e:
         click.echo(f"Impossible de récupérer la page de la fédération : {e}")
         click.echo("Vérifiez votre connexion internet, puis réessayez plus tard. Rien n'a été modifié.")
-        return
+        raise SystemExit(1)  # code d'erreur : la mise à jour automatique s'arrête ici
 
     nombre = len(extraire_matchs(html))
     click.echo(f"{nombre} matchs trouvés dans la page.")
     if nombre == 0:
         click.echo("Aucun match reconnu : la page a peut-être changé de format. Rien n'a été modifié.")
-        return
+        raise SystemExit(1)  # code d'erreur : la mise à jour automatique s'arrête ici
 
     rapport = importer(html, simulation=simulation)
     for titre, lignes in [("Nouveaux résultats", rapport.nouveaux), ("Résultats corrigés", rapport.corriges),
