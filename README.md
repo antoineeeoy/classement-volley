@@ -1,11 +1,11 @@
 # Classement de volley-ball : Régionale 2 masculine, poule C
 
-![Tests](https://github.com/TON-PSEUDO/classement-volley/actions/workflows/tests.yml/badge.svg)
-
 Site web réalisé avec **Flask** qui affiche le classement, le calendrier et les résultats d'un
 vrai championnat de volley-ball : la Régionale 2 senior masculine (poule C) de la Ligue
 Île-de-France, saison 2026/2027. C'est une version moderne et adaptée au téléphone de la page
 officielle publiée par la fédération.
+
+**Voir le site en ligne : https://antoineusochea.pythonanywhere.com** (mis à jour automatiquement chaque lundi)
 
 ![Classement sur ordinateur](docs/apercu-classement.png)
 
@@ -173,8 +173,6 @@ Projet personnel non officiel, sans lien avec la FFvolley ni avec la Ligue Île-
 
 ## Pistes d'amélioration
 
-- Lancer l'import automatiquement chaque lundi (planificateur de tâches Windows ou cron)
 - Afficher un graphique de l'évolution du classement journée après journée
 - Gérer les forfaits et plusieurs poules
 - Remplacer le mot de passe par une vraie connexion administrateur
-- Mettre le site en ligne (PythonAnywhere ou Render, par exemple)
